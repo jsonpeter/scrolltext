@@ -6,122 +6,70 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        html,body{ margin:0; padding: 0; height: 100%; font-size: 1rem;font-family: "Microsoft YaHei",Helvetica, Arial, sans-serif;color: #666666;}
+        html,body{ margin:0; padding: 0; height: 100%; font-size: 1rem;font-family: "Microsoft YaHei",Helvetica, Arial, sans-serif;color: #666666;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
         *{box-sizing: border-box;}
-        .page{ height: 100%; max-width: 500px; margin: 0 auto;}
-        .context{height:calc(100% - 20px); overflow: hidden; background: #f0f0f0; border-radius: 5px;}
-        .context div#context-con{width: 100%;  text-shadow: 1px 1px 1px #ffffff; line-height: 28px;
+        .txt-center{ text-align: center;}
+        .page{ height: 100%; max-width: 500px; margin: 0 auto;position: relative;}
+        .context{height:calc(100% - 30px); width:calc(100% - 20px); overflow-y: hidden; overflow-x: visible; background: #f0f0f0; border-radius: 5px; position: relative;}
+        #scrollright{display: block;height: 20px;color: #ffffff; width: 20px; line-height: 20px;background: #FF9900;position: absolute; right:0; top:0;
+         border-bottom-right-radius: 50px;
+         border-top-right-radius: 50px;
+        }
+        .context div#context-con{width: 100%;  text-shadow: 1px 1px 1px #ffffff; line-height: 28px; padding: 10px;
             transition:all 1s;
-            -moz-transition:all 1s; /* Firefox 4 */
-            -webkit-transition:all 1s; /* Safari and Chrome */
-            -o-transition:all 1s; /* Opera */}
-        #scrollbar{position:relative;height: 2px;background: #cccccc; margin: 10px 0; display: none;}
-        #scrollbar.active{display: block;transition: top .5s; }
-        #scrollbar.active span{display: block; text-align: center;cursor: pointer; height: 20px; width: 20px; line-height: 20px; color: #ffffff;font-size: 11px; border-radius: 50%; background: #2ba2c5; position: absolute; left: 0; top: 50%; margin-top: -10px;}
+            -webkit-transition:all 1s;}
+        .context div#context-con p{ height: 50px; width: 100%; display: block;}
+        .context div#context-con p:nth-child(even){background: #2ba2c5;}
+        #scrollbot{position:relative;height: 2px;background: #cccccc; margin: 10px 0; display: none;}
+        #scrollbot.active{display: block;transition: top .5s; }
+        #scrollbot.active span{display: block;cursor: pointer; height: 20px; width: 20px; line-height: 20px; color: #ffffff;font-size: 11px; border-radius: 50%; background:#841186; position: absolute; left: 0; top: 50%; margin-top: -10px;}
     </style>
 </head>
 <body>
 <div class="page">
-<div class="context">
-    <div id="context-con">
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
-        今年，人社部、财政部印发《人力资源社会保障部财政部关于2017年调整退休人员基本养老金的通知》，决定从2017年1月1日起，为2016年底前已按规定办理退休手续并按月领取基本养老金的企业和机关事业单位退休人员提高基本养老金水平，总体调整水平为2016年退休人员月人均基本养老金的5.5%左右<br>
+    <div id="scrollright" class="txt-center">1</div>
+<div class="context" id="context">
+        <div id="context-con">
+            【品橙旅游】Remark Media是一家专注于千禧一代的数字媒体上市公司，总部设于拉斯维加斯。近日，该公司收购了目的地网站Vegas.com，后者是家族企业Greenspun在17年前开始创办的。
 
+           <h3>vegas150821</h3>
 
+            <br>美联社报道，此项交易在1550万美元，另有业内人士补充，此次交易除1550万美元现金，<br>另有950万美元Remark股票、1000万美元股票期权，其中基于未来三年网站业绩期权最高可达300万美元。</br>
+
+            Remark计划将Vegas.com的目标游客更专注于千禧一代，<br>即年龄在18至34岁之间的目标群体。Vegas.com称，目前，其网站每月能吸引340万游客。在一定程度上，与该市的目的地营销公司LasVegas.com不相上下。<br>
+
+            2014年5月，Remark收购了首个旅行平台Roomlia<br>，以680万美元购进其酒店预订移动app。<br>
+
+            不过，Remark本质上并非一家旅游公司，它还拥有Banks.com等其他九家数字公司、<br>一家个人理财网站、一家有关年轻人生活方式的网站Bikini.com，<br>即年龄在18至34岁之间的目标群体。Vegas.com称，目前，其网站每月能吸引340万游客。在一定程度上，与该市的目的地营销公司LasVegas.com不相上下。<br>
+
+            2014年5月，Remark收购了首个旅行平台Roomlia<br>，以680万美元购进其酒店预订移动app。<br>
+
+            不过，Remark本质上并非一家旅游公司，它还拥有Banks.com等其他九家数字公司、<br>一家个人理财网站、一家有关年轻人生活方式的网站Bikini.com，<br>以及一家在中国的教育门户网站博闻网(BoWenW<br>
 
     </div>
 </div>
-<div id="scrollbar"><span>1</span></div>
+<div id="scrollbot"><span class="txt-center">1</span></div>
 </div>
+<script src="textscroll.js"></script>
 <script>
-  (function () {
-      if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)) {
-          alert('没有做兼容处理，请使用chrome或非Trident内核浏览器');
-          return;
-      }
-      //临时存储一些dom
-      var $con=document.querySelector('#context-con');
-      var $body=document.querySelector('body');
-      var $scroll=document.querySelector('#scrollbar');
-      var $scrollBtn= $scroll.querySelector('span');
-      var $scrollWidth=0;
-      var _$conHeight=$con.offsetHeight;
-      var _$bodyHeight=$body.offsetHeight;
-      //---------------------
-      var pageCount=0; //总页数
-      var currPage=1;//当前页
-      var stepPage=0;//步长
-      //如果内容超过页面
-      if(_$conHeight>_$bodyHeight){
-          //如果超过页面则显示横向滚动
-          $scroll.setAttribute("class",'active');
-          $scrollWidth=$scroll.offsetWidth;
-          //计算总页数
-          pageCount=Math.ceil(_$conHeight/_$bodyHeight);
-          //计算一步的长度
-          stepPage=Math.ceil($scrollWidth/pageCount);
-      }
-      //滚动条添加事件
-      var eventType= {
-          eventDown:{name: 'mousedown'},
-          eventUp: {name:'mouseup',fn:function () {
-              //移除移动事件
-              this.removeEventListener(eventType.eventMove.name,eventType.eventMove.event_fn);
-          },event_fn:function () {
-              eventType.eventUp.fn.apply(this,arguments);
-              //移除鼠标抬起事件
-              this.removeEventListener(eventType.eventUp.name,eventType.eventUp.event_fn);
-          }},
-          eventMove: {
-              name: 'mousemove', fn: function (ev) {
-                  //计算出鼠标坐标相对于父级的位置
-                  var moveX =(ev.clientX||ev.touches[0].clientX) - $scroll.offsetLeft;
-                  //拖动不能超出滚动条的长度
-                  if (moveX <= ($scrollWidth - this.offsetWidth) && moveX >= 0) {
-                      if (moveX < stepPage * currPage) {
-                          currPage = currPage === 1 ? 1 : currPage - 1;
-                      }
-                      if (moveX > stepPage * currPage) {
-                          currPage = currPage === pageCount ? pageCount : currPage + 1;
-                      }
-                      //位置移动
-                      $con.style.WebkitTransform = 'translate(0px, ' + (0 - _$bodyHeight * (currPage - 1)) + 'px)';
-                      this.style.WebkitTransform = 'translate(' + moveX + 'px, 0px)';
-                      this.innerHTML = currPage;
-                  }
-              },event_fn:function (ev) {
-                  //设置统一hander方便移除
-                  eventType.eventMove.fn.apply($scrollBtn,arguments);
-              }
-          }
-      };
-      //移动设备事件
-      if(navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i)){
-          eventType.eventDown.name='touchstart';
-          eventType.eventUp.name='touchend';
-          eventType.eventMove.name='touchmove';
-      }
-      //添加鼠标事件
-      $scrollBtn.addEventListener(eventType.eventDown.name,function () {
-          //添加滚动事件
-          document.addEventListener(eventType.eventMove.name,eventType.eventMove.event_fn);
-          //鼠标松开移除事件
-          document.addEventListener(eventType.eventUp.name,eventType.eventUp.event_fn)
-      })
-  })()
+    (function () {
+        var myscroll=new scroll({
+            conbox: document.querySelector('#context'),
+            con: document.querySelector('#context-con'),
+            scrollbot: document.querySelector('#scrollbot'),
+            scrollright: document.querySelector('#scrollright')
+        });
+        myscroll.init();
+        myscroll.event();
+    })()
 </script>
 </body>
 </html>
